@@ -129,7 +129,13 @@ tree.insert(2);
 tree.insert(16);
 tree.insert(7);
 
-console.log("BFS", tree.BFS());
-console.log("DFSPreOrder", tree.DFSPreOrder());
-console.log("DFSPostOrder", tree.DFSPostOrder());
-console.log("DFSInOrder", tree.DFSInOrder());
+const data = [
+  {
+    BFS: tree.BFS().toString(),
+    DFSPreOrder: tree.DFSPreOrder().toString(),
+    DFSPostOrder: tree.DFSPostOrder().toString(),
+    DFSInOrder: tree.DFSInOrder().toString(),
+  },
+];
+
+console.table(data);
