@@ -1,3 +1,4 @@
+// 1st
 function sameFrequency(num1, num2) {
   let ns1 = num1.toString().split("");
   let ns2 = num2.toString().split("");
@@ -26,7 +27,28 @@ function sameFrequency(num1, num2) {
   return true;
 }
 
-console.log(sameFrequency(182, 821)); // true
-console.log(sameFrequency(184, 821)); // false
-console.log(sameFrequency(3589578, 5879385)); // true
-console.log(sameFrequency(22, 222)); // false
+console.log(sameFrequency(182, 821), "->", true);
+console.log(sameFrequency(184, 821), "->", false);
+console.log(sameFrequency(3589578, 5879385), "->", true);
+console.log(sameFrequency(22, 222), "->", false);
+
+// 2nd
+function areThereDuplicates(...values) {
+  if (values.length < 2) {
+    return false;
+  }
+
+  let uniqueValues = [];
+  for (let val of values) {
+    if (uniqueValues.includes(val)) {
+      return true;
+    }
+    uniqueValues.push(val);
+  }
+
+  return false;
+}
+
+console.log(areThereDuplicates(1, 2, 3), "->", false);
+console.log(areThereDuplicates(1, 2, 2), "->", true);
+console.log(areThereDuplicates("a", "b", "c", "a"), "->", true);
