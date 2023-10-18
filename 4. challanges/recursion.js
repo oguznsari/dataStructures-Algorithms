@@ -198,3 +198,40 @@ let obj = {
 };
 
 console.log(stringifyNumbers(obj), "->", "numbers stringified in obj");
+
+// 14
+function collectStrings(obj) {
+  var stringsArr = [];
+
+  function gatherStrings(o) {
+    for (var key in o) {
+      if (typeof o[key] === "string") {
+        stringsArr.push(o[key]);
+      } else if (typeof o[key] === "object") {
+        return gatherStrings(o[key]);
+      }
+    }
+  }
+
+  gatherStrings(obj);
+
+  return stringsArr;
+}
+
+const obje = {
+  stuff: "foo",
+  data: {
+    val: {
+      thing: {
+        info: "bar",
+        moreInfo: {
+          evenMoreInfo: {
+            weMadeIt: "baz",
+          },
+        },
+      },
+    },
+  },
+};
+
+console.log(collectStrings(obje), "->", ["foo", "bar", "baz"]);
