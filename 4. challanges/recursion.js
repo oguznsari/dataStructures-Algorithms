@@ -102,3 +102,22 @@ console.log(flatten([1, 2, 3, [4, 5]]), "->", [1, 2, 3, 4, 5]);
 console.log(flatten([1, [2, [3, 4], [[5]]]]), "->", [1, 2, 3, 4, 5]);
 console.log(flatten([[1], [2], [3]]), "->", [1, 2, 3]);
 console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]), "->", [1, 2, 3]);
+
+// 10
+function capitalizeFirst(array) {
+  if (array.length === 0) {
+    return [];
+  }
+
+  const firstWord = array[0];
+  const capitalizedFirstWord =
+    firstWord.charAt(0).toUpperCase() + firstWord.slice(1).toLowerCase();
+
+  return [capitalizedFirstWord, ...capitalizeFirst(array.slice(1))];
+}
+
+console.log(capitalizeFirst(["car", "taco", "banana"]), "->", [
+  "Car",
+  "Taco",
+  "Banana",
+]);
