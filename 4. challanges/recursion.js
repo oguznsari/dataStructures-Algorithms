@@ -26,4 +26,10 @@ function productOfArray(arr) {
 console.log(productOfArray([1, 2, 3]), "->", 6);
 console.log(productOfArray([1, 2, 3, 10]), "->", 60);
 
-
+// 4
+function recursiveRange(num) {
+  if (num === 0) return 0;
+  return num + recursiveRange(num - 1);
+}
+console.log(recursiveRange(6), "->", 21); // 21
+console.log(recursiveRange(10), "->", 55); // 55
